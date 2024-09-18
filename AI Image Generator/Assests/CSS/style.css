@@ -1,0 +1,452 @@
+/* <---------- Font ---------> */
+@import url('https://fonts.googleapis.com/css2?family=Matemasie&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    text-decoration: none;
+    list-style: none;
+    font-family: "Roboto", sans-serif;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
+:root{
+    --big-font : 3.8rem;
+    --medium-font : 3.1rem;
+    --medium-medium-font : 2.7rem;
+    --small-medium-font : 2rem;
+    --small-font: 1.7rem;
+    --p-font:1.1rem;
+    --a-font : 1rem;
+
+    --p-colour : #565656;
+    --h1-colour : #1b1919;
+    --h3-colour : #201e1e;
+    --logo-colour : #2e2c2c;
+    --button-color: #ffcd6d;
+    --background-color : #E3DFDC;
+}
+
+/* <------- Header Start ---------> */
+
+#nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 10001;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 3%;
+    border-radius: 20px;
+    height: 11vh;
+    width: 50vw;
+    background-color: #ffffff54;
+    backdrop-filter: blur(10px);
+    padding: 0px 30px;
+    transition: 0.3s ease;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+#nav>.logo{
+    font-size: var(--small-font);
+    font-weight: 800;
+    color: var(--logo-colour);
+}
+#center-nav{
+    display: flex;
+}
+#center-nav>li{
+    margin-left: 20px;
+}
+#center-nav>li>a{
+    color: var(--logo-colour);
+    font-size: var(--a-font);
+    display: flex;
+}
+
+/* <------- Header End ---------> */
+
+/* <-------- Menu Icon -----------> */
+#menu-icon{
+    display: none;
+    cursor: pointer;
+    width: 25px;
+    height: 20px;
+    gap: 6px;
+    z-index: 10001;
+    transition: 0.4s ease;
+    visibility: hidden;
+    opacity: 0;
+}
+#menu-icon div{
+    display: inline-block;
+    width: 100%;
+    height: 4px;
+    background: var(--h1-colour);
+    transition: 0.8s ease;
+}
+
+/* Change to a cross icon when active */
+#menu-icon.add{
+    gap: 3px;
+}
+
+#menu-icon.add div:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+#menu-icon.add div:nth-child(2) {
+    opacity: 0;  /* Hide the middle line */
+}
+
+#menu-icon.add div:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* <-------- Menu Icon -----------> */
+
+/* <------- Main Start ---------> */
+
+#main{
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#page{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: var(--background-color);
+}
+#page>h1{
+    font-size: var(--big-font);
+    color: var(--h1-colour);
+    position: absolute;
+    top: 38%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1001;
+    text-align: center;
+    font-weight: 500;
+}
+#page>p{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: var(--p-font);
+    z-index: 1001;
+    text-align: center;
+    font-weight: 400;
+    color: #565656;
+}
+#page>.generate{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 67%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1001;
+    text-align: center;
+    padding: 10px 35px;
+    font-size: var(--p-font);
+    background-color: var(--button-color);
+    color: var(--logo-colour);
+    border: none;
+    outline: none;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: 0.4s ease;
+}
+#page>.generate>img{
+    width: 24px;
+    margin-right: 5px;
+    transition: 0.4s ease;
+}
+#page>.generate:hover >img{
+    margin-right: 15px;
+}
+canvas{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    z-index: 100;
+}
+#blanKPage{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--background-color);
+}
+#heading{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: #fff;
+}
+#heading h1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 5rem;
+    color: var(--h1-colour);
+    text-align: center;
+}
+#why-choose{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 40px;
+}
+#why-choose .row{
+    width: 75%;
+    height: 80%;
+    background-color: var(--background-color);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+}
+#why-choose .row .text-content{
+    display: flex;
+    flex-direction: column;
+}
+#why-choose .row .text-content h3{
+    font-size: var(--medium-medium-font);
+    color: var(--h3-colour);
+    margin-bottom: 20px;
+}
+#why-choose .row .text-content p{
+    width: 80%;
+    font-size: var(--p-font);
+    color: var(--p-colour);
+    margin-bottom: 30px;
+}
+#why-choose .row .text-content .more{
+    width: 150px;
+    height: 40px;
+    line-height: 35px;
+    font-size: 12px;
+    color: #fff;
+    background-color: #0d0d0d;
+    text-align: center;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+#why-choose .row .text-content .more i{
+    font-size: var(--p-font);
+    transition: 0.4s ease;
+    color: #fff;
+}
+#why-choose .row .text-content .more:hover i{
+    margin-left: 15px;
+}
+#why-choose .row .img-content img{
+    width: 350px;
+}
+
+/* <------- Main End ---------> */
+
+
+/* <------- Let's make it responsive --------> */
+
+/* <------- Big Screen --------> */
+@media screen and (max-width: 1250px) {
+    :root{
+        --big-font : 3.5rem;
+        --medium-font : 2.7rem;
+        --medium-medium-font : 2.3rem;
+        --small-medium-font : 1.6rem;
+        --small-font: 1.3rem;
+        --p-font: 1.1rem;
+        --a-font : 0.8rem;
+    }
+    #page>h1{
+        width: 65%;
+    }
+    #page>p{
+        top: 58%;
+        width: 55%;
+    }
+    #page>.generate{
+        top: 70%;
+        margin-bottom: 1rem;
+    }
+    #nav{
+        width: 60vw;
+    }
+    #heading h1{
+        font-size: 4rem;
+    }
+}
+
+/* <------- Big Screen --------> */
+
+/* <------- Tab Screen --------> */
+
+@media screen and (max-width: 880px) {
+    :root{
+        --big-font : 3rem;
+        --medium-font : 2.3rem;
+        --medium-medium-font : 2.1rem;
+        --small-medium-font : 1.4rem;
+        --small-font: 1.1rem;
+        --p-font: 1rem
+    }
+    #page>p{
+        top: 57%;
+        width: 70%;
+    }
+    #page>.generate{
+        top: 69%;
+    }
+    #page.noButton p{
+        top: 56%;
+    }
+    #why-choose .row{
+        width: 90%;
+        height: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 15px;
+    }
+    #why-choose .row .img-content img{
+        width: 275px;
+    }
+    #why-choose .row .text-content h3{
+        width: 100%;
+        margin-bottom: 5px;
+        font-size: var(--medium-font);
+    }
+    #why-choose .row .text-content p{
+        width: 100%;
+        margin-bottom: 8px;
+    }
+    #nav{
+        width: 100%;
+        top: 0;
+        border-radius: 0;
+    }
+}
+
+/* <------- Tab Screen --------> */
+
+/* <------- Big-Size Phone Screen --------> */
+
+@media screen and (max-width: 650px) {
+    #page>h1{
+        width: 75%;
+        font-size: var(--medium-font);
+    }
+    #page>p{
+        top: 55%;
+        width: 70%;
+        font-size: 14px;
+    }
+    #heading h1{
+        font-size: var(--medium-font);
+        width: 100%;
+    }
+    #page>.generate{
+        top: 67%;
+    }
+    #page.noButton p{
+        top: 54%;
+    }
+    #why-choose .row .text-content h3{
+        font-size: var(--medium-medium-font);
+    }
+    #why-choose .row .text-content p{
+        font-size: 14.5px;
+    }
+    #why-choose .row .img-content img{
+        margin-top: 15px;
+        width: 250px;
+    }
+}
+
+/* <------- Big-Size Phone Screen --------> */
+
+@media screen and (max-width:455px) {
+    #menu-icon{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        visibility: visible;
+        opacity: 1;
+    }
+    #center-nav{
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        background: var(--background-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        box-shadow: 0 5px 8px rgb(15 54 55 / 10%);
+        clip-path: circle(0% at 50% 0);
+        transition: 0.8s ease;
+        padding: 20px 0;
+    }
+    #center-nav > li > a{
+        display: block;
+        padding: 12px;
+        font-size: var(--small-font);
+    }
+    #center-nav.active{
+        clip-path: circle(344% at 60% 0);
+    }
+    #page > h1{
+        width: 90%;
+    }
+    #page > p{
+        width: 90%;
+    }
+    #why-choose .row{
+        height: 100%;
+        margin-bottom: 30px;
+        padding: 20px 10px;
+    }
+    #why-choose .row .text-content h3{
+        margin-bottom: 5px;
+    }
+    #why-choose .row .text-content p{
+        margin-bottom: 10px;
+    }
+}
+
+/* @media screen and (max-width:355px) {} */
