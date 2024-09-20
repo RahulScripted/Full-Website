@@ -328,7 +328,6 @@ p{
     flex-wrap: wrap;
     width: 100%;
     gap: 2rem;
-    overflow: hidden;
     padding: 10px;
 }
 .pricing-sec-container .pricing-sec{
@@ -339,8 +338,12 @@ p{
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    transition: all 0.4s ease-in;
     cursor: pointer;
     box-shadow: 2px 3px 7px rgba(0,0,0,0.25);
+}
+.pricing-sec-container .pricing-sec:hover{
+    transform: scale(1.05);
 }
 .pricing-sec-container .pricing-sec img{
     width: 100%;
@@ -405,6 +408,127 @@ p{
     width: 100%;
 }
 
+/* <---------- Review -------------> */
+.review{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+.left-container{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    width: 60%;
+    position: relative;
+    padding: 20px;
+}
+.left-container img{
+    border-radius: 10px;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.25);
+    cursor: pointer;
+    width: 23vw;
+}
+.left-container .merge-img-sec{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.right-container h2{
+    font-weight: 600;
+    font-size: 2rem;
+}
+.right-container p{
+    margin-bottom: 25px;
+}
+
+/* <----------- Contact ---------------> */
+.contact{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10rem;
+}
+.contact .right-side{
+    width: 50%;
+    position: relative;
+}
+.contact .right-side input{
+    width: 100%;
+    height: 50px;
+    line-height: 45px;
+    padding-left: 25px;
+    font-size: 15px;
+    color: var(--p-color);
+    border: none;
+    background-color: transparent;
+    outline: none;
+    box-shadow: 0 4px 7px rgba(0,0,0,0.25);
+    border-radius: 25px;
+}
+.contact .right-side .btn{
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 15px 30px;
+    cursor: pointer;
+    font-size: var(--p-font);
+}
+
+/* <------------ Footer --------------> */
+.footer{
+    width: 100%;
+    background-color: #0D213F;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 40px 40px 20px;
+}
+.footer .row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 4rem;
+    gap: 4rem;
+}
+.footer .row .col{
+    display: flex;
+    flex-direction: column;
+}
+.footer .row .col:nth-child(1){
+    width: 40%;
+}
+.footer .row .col{
+    gap: 1rem;
+}
+.footer .row .col h1{
+    font-size: 22px;
+    color: #fff;
+    margin-bottom: 40px;
+}
+.footer .row .col p{
+    color: #faf8f89a;
+}
+.footer .row .col p span{
+    font-weight: 700;
+    color: #EAEAE9;
+}
+.footer .row .col h4{
+    color: #faf8f8e2;
+    font-weight: 500;
+}
+.rule{
+    width: 90%;
+    height: 4px;
+    background-color: #EAEAE9;
+    margin-bottom: 1.5rem;
+}
+.copyright{
+    font-size: 15px;
+    color: #faf8f8;
+}
+
 /* <------------ Responsive ------------> */
 @media (max-width:1250px){
     .pricing-sec-container{
@@ -434,6 +558,12 @@ p{
     }
     section{
         padding: 90px 20px;
+    }
+    .contact{
+        gap: 1rem;
+    }
+    .contact .left-side{
+        width: 50%;
     }
 }
 @media (max-width:768px){
@@ -509,6 +639,46 @@ p{
     .pricing .pricing-top p{
         width: 100%;
     }
+    .review{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .review .left-container{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .review .left-container img{
+        width: 30vw;
+    }
+    .review .right-container .heading{
+        font-size: 1.4rem;
+    }
+    .contact{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .contact .left-side{
+        width: 100%;
+    }
+    .contact .right-side{
+        width: 100%;
+    }
+    .footer .row .col h1{
+        margin-bottom: 20px;
+    }
+    .footer .row .col:nth-child(1){
+        width: 100%;
+    }
+    .copyright{
+        text-align: center;
+    }
 }
 @media (max-width:475px){
     .home{
@@ -529,5 +699,8 @@ p{
     }
     .pricing-sec-container .pricing-sec{
         width: 300px;
+    }
+    .review .left-container img{
+        width: 40vw;
     }
 }
