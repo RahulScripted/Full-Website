@@ -36,6 +36,16 @@ html,body{
     --a-font : 1.1rem;
     --h5-font : 1.15rem;
 }
+/* <------------- Scroll --------------> */
+::-webkit-scrollbar{
+    width: 12px;
+}
+::-webkit-scrollbar-thumb{
+    cursor: pointer;
+    background: var(--button-color);
+    border-radius: 25px;
+}
+
 /* <------------ Perquisites ------------> */
 section{
     padding: 80px 40px;
@@ -129,6 +139,7 @@ p{
 }
 .header .navBar .menu-list a:hover{
     color: var(--button-color);
+    font-weight: 600;
 }
 
 /* <----------- Home Section -----------------> */
@@ -262,7 +273,6 @@ p{
     border-radius: 10px;
     overflow: hidden;
     position: relative;
-    transition: all 0.6s ease-in-out;
 }
 .destination-bottom .img-sec img{
     width: 100%;
@@ -338,12 +348,8 @@ p{
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    transition: all 0.4s ease-in;
     cursor: pointer;
     box-shadow: 2px 3px 7px rgba(0,0,0,0.25);
-}
-.pricing-sec-container .pricing-sec:hover{
-    transform: scale(1.05);
 }
 .pricing-sec-container .pricing-sec img{
     width: 100%;
@@ -482,7 +488,7 @@ p{
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding: 40px 40px 20px;
+    padding: 60px 40px 20px;
 }
 .footer .row{
     display: flex;
@@ -669,6 +675,9 @@ p{
     }
     .contact .right-side{
         width: 100%;
+    }
+    .footer{
+        padding: 30px 40px 20px;
     }
     .footer .row .col h1{
         margin-bottom: 20px;
