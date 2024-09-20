@@ -1,0 +1,309 @@
+/* <-------------- Google Font ----------------> */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+    font-family: "Poppins", sans-serif;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
+:root{
+    /* <------------ Color ------------> */
+    --button-color : #3685FB;
+    --h5-color : #1d76fb;
+    --background-color : #FAFCFF;
+    --h1-color : #0D213F;
+    --p-color: #4C5B72;
+    --a-color : #1a1919;
+    --hover-color: #746E72;
+    --button-hover-color : #2F73D9;
+    --button-inside-color : #fff;
+
+    /* <------------ Font Size ------------> */
+    --logo-size : 1.6rem;
+    --medium-font : 3.5rem;
+    --p-font : 1rem;
+    --a-font : 1.1rem;
+    --h5-font : 1.15rem;
+}
+/* <------------ Perquisites ------------> */
+section{
+    padding: 80px 40px;
+}
+
+.btn{
+    flex-shrink: 0;
+    padding: 9px 25px;
+    border-radius: 35px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: var(--button-color);
+    color: var(--button-inside-color);
+    transition: all 0.4s ease-in;
+    font-size: var(--a-font);
+    box-shadow: 0 3px 7px rgba(0,0,0,0.3);
+}
+.btn:hover{
+    background-color: var(--button-hover-color);
+}
+
+h5{
+    font-size: var(--h5-font);
+    color: var(--h5-color);
+    font-weight: 600;
+}
+p{
+    font-size: var(--p-font);
+    color: var(--p-color);
+}
+
+/* <----------- Main --------------> */
+.main{
+    width: 100%;
+    height: 100%;
+    color: var(--h1-color);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+}
+
+/* <---------------- Hamburger Menu ----------------> */
+#menu-icon{
+    font-size: 1.6rem;
+    color: var(--h1-color);
+    font-weight: 600;
+    display: none;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* <--------------- Header ----------------> */
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    padding: 20px 40px;
+    z-index: 100;
+}
+.header.shadow{
+    box-shadow: 0 4px 7px rgba(0,0,0,0.3);
+    background-color: var(--background-color);
+}
+.header .logo{
+    font-size: var(--logo-size);
+    font-weight: 400;
+}
+.header .logo span{
+    font-weight: 600;
+    color: var(--button-color);
+}
+.header .navBar{
+    display: flex;
+    align-items: center;
+}
+.header .navBar .menu-list{
+    margin: 0 20px;
+}
+.header .navBar .menu-list a{
+    font-size: var(--a-font);
+    color: var(--a-color);
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+}
+.header .navBar .menu-list a:hover{
+    color: var(--button-color);
+}
+
+/* <----------- Home Section -----------------> */
+.home{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 5rem;
+}
+.home .left{
+    width: 50%;
+    position: relative;
+    display: flex;
+    padding: 20px;
+}
+.home .left img{
+    width: 150px;
+    border: 10px solid #faf8f8;
+    border-radius: 20px;
+}
+.home .left .first{
+    width: 25vw;
+}
+.home .left .second{
+    position: absolute;
+    bottom: 0;
+    right: 25%;
+}
+.home .right{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+.home .right h5{
+    margin-bottom: 20px;
+}
+.home .right h1{
+    font-size: var(--medium-font);
+    color: var(--h1-color);
+    line-height: var(--medium-font);
+    margin-bottom: 1.5rem;
+}
+.home .right p{
+    margin-bottom: 2rem;
+}
+.home .right .buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+.home .right .buttons .video-sec{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 2.5rem;
+    position: relative;
+}
+.home .right .buttons .video-sec img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.home .right .buttons .video-sec i{
+    width: 30px;
+    height: 30px;
+    background-color: var(--background-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: red;
+    box-shadow: 0 3px 7px rgba(0,0,0,0.3);
+    position: absolute;
+    right: -25%;
+}
+.home .right .buttons .watch{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: 600;
+    color: var(--p-color);
+    flex-shrink: 0;
+}
+
+
+/* <------------ Responsive ------------> */
+@media (max-width:1024px){
+    :root{
+        /* <------------ Font Size ------------> */
+        --logo-size : 1.4rem;
+        --medium-font : 2.4rem;
+        --p-font : 0.9rem;
+        --a-font : 0.9rem;
+        --h5-font : 1.05rem;
+    }
+    .header{
+        padding: 20px;
+    }
+}
+@media (max-width:768px){
+    #menu-icon{
+        display: initial;
+        opacity: 1;
+        z-index: 999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 25px;
+    }
+    .navBar{
+        position: absolute;
+        top: -500%;
+        left: 50%;
+        transform: translate(-50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        height: fit-content;
+        background: var(--button-color);
+        padding: 70px 0;
+        transition: all 0.5s ease-in-out;
+        z-index: 100;
+    }
+    .header .navBar .menu-list a{
+        color: var(--background-color);
+    }
+    .navBar.active{
+        top: 0;
+    }
+    .navBar.active ~ #menu-icon{
+        width: 100%;
+        color: var(--button-inside-color);
+    }
+    .home{
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+    .home .left{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .home .left .first{
+        width: 300px;
+    }
+    .home .left .second{
+        position: absolute;
+        left: 60%;
+    }
+    .home .right{
+        width: 100%;
+    }
+}
+@media (max-width:475px){
+    .home{
+        padding-inline: 10px;
+    }
+    .home .right h1{
+        font-size: 30px;
+    }
+    .home .right .buttons{
+        gap: 0.5rem;
+    }
+    .home .right .buttons .video-sec{
+        margin-left: 1rem;
+    }
+    .home .right .buttons .watch{
+        margin-left: 1rem;
+        font-size: 12px;
+    }
+}
