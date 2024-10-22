@@ -20,6 +20,7 @@
     --h1-color : #131313;
     --background-2nd-color : #FFFFFF;
     --logo-color : #484848;
+    --active-color : #f1eaea;
 
     --heading-size : 3.1rem;
     --logo-size : 1.75rem;
@@ -41,7 +42,7 @@ section{
 }
 .curve{
     font-family: "Exo 2", sans-serif;
-    font-size: 1.45rem;
+    font-size: 1.75rem;
     font-weight: 600;
     color: var(--cursive-color);
 }
@@ -109,6 +110,7 @@ section{
     color: var(--h1-color); 
     font-size: var(--a-size);
     cursor: pointer;
+    transition: all 0.35s ease-in;
 }
 .menu-icon{
     width: 27px;
@@ -167,8 +169,65 @@ section{
     width: 60%;
 }
 
+/* <----- Beginner ------> */
+.beginner{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+}
+.beginner .imgSec{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 20px;
+    gap: 2rem;
+}
+.beginner .imgSec img{
+    width: 40vw;
+    object-fit: cover;
+    border-radius: 25px;
+}
+.beginner .imgSec .rowPart{
+    display: flex;
+    justify-content: space-between;
+    border-radius: 25px;
+    gap: 2rem;
+}
+.beginner .imgSec .rowPart img{
+    width: 18vw;
+    height: 12vw;
+}
+.beginner .imgSec .rowPart img:nth-child(2){
+    width: 22vw;
+    height: 20vw;
+}
+.beginner .textSec{
+    display: flex;
+    flex-direction: column;
+}
+.beginner .textSec .curve{
+    margin-bottom: 15px;
+}
+.beginner .textSec .heading{
+    font-size: 4.5rem;
+    line-height: 4.5rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.beginner .textSec .paragraph{
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+.beginner .textSec .btn{
+    width: 200px;
+}
+
 /* <----- For Small Laptop ------> */
-@media (max-width : 1125px) {
+@media (max-width : 1225px) {
     :root{
         --logo-size : 1.5rem;
         --a-size : 1rem;
@@ -189,6 +248,44 @@ section{
     }
     .lessons .heading{
         width: 55%;
+    }
+    .beginner{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .beginner .imgSec{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: row;
+        padding: 20px;
+        gap: 1rem;
+    }
+    .beginner .imgSec img{
+        height: 35vw;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+    .beginner .imgSec .rowPart{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .beginner .imgSec .rowPart img,
+    .beginner .imgSec .rowPart img:nth-child(2){
+        width: 35vw;
+        height: 20vw;
+    }
+    .beginner .textSec .heading{
+        font-size: 3.5rem;
+        line-height: 3.5rem;
+    }
+    .beginner .textSec .paragraph{
+        font-size: 1.1rem;
     }
 }
 
@@ -216,9 +313,7 @@ section{
         top: -500%;
         right: 0;
         z-index: 100;
-        background-color: rgba(18, 18, 18, 0.148);
-        backdrop-filter: blur(60px);
-        -webkit-backdrop-filter: blur(60px); 
+        background-color: #090909;
         width: 100%;
         border-bottom-left-radius: 50%;
         border-bottom-right-radius: 50%;
@@ -233,12 +328,16 @@ section{
     .navBar.active{
         top: 0;
     }
+    .navBar.active li a{
+        color: var(--active-color);
+    }
     .navBar ~.menu-icon div{
         transition: all 0.4s ease-in;
     }
     .navBar.active ~ .menu-icon div{
         background-color: var(--h1-color);
         transition: all 0.4s ease-in;
+        background-color: var(--background-2nd-color);
     }
     .navBar.active ~ .menu-icon div:nth-child(1){
         transform: translateY(9px) rotate(45deg);
@@ -276,7 +375,26 @@ section{
         width: 75%;
         font-size: 1rem;
         text-align: center;
-    }  
+    }
+    .beginner .imgSec img{
+        height: 45vw;
+    }
+    .beginner .imgSec .rowPart{
+        gap: 1rem;
+    }
+    .beginner .imgSec .rowPart img,
+    .beginner .imgSec .rowPart img:nth-child(2){
+        width: 35vw;
+        height: 25vw;
+    }
+    .beginner .textSec .heading{
+        font-size: 2rem;
+        line-height: 2rem;
+        font-weight: 700;
+    }
+    .beginner .textSec .paragraph{
+        font-size: 0.95rem;
+    }
 }
 
 /* <----- For Mobile ------> */
