@@ -30,6 +30,7 @@
 
 body{
     background-color: var(--background-color);
+    overflow-x: hidden;
 }
 
 section{
@@ -71,6 +72,9 @@ section{
 .btn:hover{
     background-color: var(--h1-color);
     color: var(--background-2nd-color);
+}
+img{
+    cursor: pointer;
 }
 
 
@@ -250,6 +254,7 @@ section{
     display: grid;
     grid-template-columns: repeat(3,1fr);
     gap: 1rem;
+    margin-bottom: 1.5rem;
 }
 .ideas .container .content{
     width: 350px;
@@ -327,6 +332,71 @@ section{
 }
 .support .btn:hover{
     background-color: #03499a;
+}
+
+/* <------- Footer ------> */
+.footer{
+    width: 100%;
+    padding: 20px;
+    background-color: var(--h1-color);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.footer .topSection{
+    width: 90%;
+    padding: 20px 0 30px;
+    border-bottom: 2px solid #A79D95;
+}
+.footer .topSection .row{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.footer .topSection .row .col{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.footer .topSection .row .col .colPart{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+.footer .topSection .row .col h4{
+    color: var(--background-color);
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+}
+.footer .topSection .row .col p{
+    color: #dcded483;
+    margin-bottom: 4px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+}
+.footer .topSection .row .col p:hover{
+    transform: translateX(5px);
+    text-decoration: underline;
+    transition: all 0.3s ease-in;
+}
+.footer .bottomSection{
+    margin-top: 15px;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.footer .bottomSection .left,
+.footer .bottomSection .right a{
+    color: #dcded483;
+    font-size: 15px;
+}
+.footer .bottomSection .right a{
+    margin-right: 10px;
 }
 
 /* <----- For Small Laptop ------> */
@@ -545,6 +615,16 @@ section{
         font-size: 1.1rem;
         gap: 1rem;
     }
+    .footer .bottomSection{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    .footer .bottomSection .right a{
+        margin-right: 5px;
+        font-size: 12px;
+    }
 }
 
 /* <----- For Mobile ------> */
@@ -590,5 +670,14 @@ section{
     .support .paragraph{
         width: 100%;
         font-size: 1rem;
+    }
+    .footer .bottomSection .right{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+    .footer .bottomSection .right a{
+        font-size: 15px;
     }
 }
