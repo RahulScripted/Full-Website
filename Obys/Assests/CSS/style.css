@@ -1,0 +1,137 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #fff;
+    font-family: "Plain Light";
+    text-decoration: none;
+    list-style: none;
+}
+body{
+    width: 100%;
+    height: 100%;
+    cursor: none;
+}
+
+/* <----- To Make Custom Cursor -----> */
+#cursor{
+    width: 3vw;
+    height: 3vw;
+    border-radius: 50%;
+    border: 1.25px solid #f5f1f1;
+    position: fixed;
+    z-index: 999;
+    transform: translateX(-50%,-50%);
+    mix-blend-mode: difference;
+}
+
+/* <----- To Make Custom Loader -----> */
+#loader{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 999;
+    padding: 15vh 5vw;
+    overflow: hidden;
+    background-color: #030303;
+}
+#loader #line{
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2vw;
+    overflow: hidden;
+}
+#loader #line .counter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+#loader #line .counter h5{
+    width: 5vw;
+    text-align: right;
+}
+#loader #line .counter h5,
+#loader #line .counter h6{
+    font-size: 3.5vw;
+    font-family: "Silk Serif";
+    font-weight: 100;
+}
+#loader #line h1{
+    font-size: 6.5vw;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+#loader #line h2{
+    font-size: 5vw;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: "Plain Light";
+    opacity: 0;
+    animation-duration: 1.25s;
+    animation-iteration-count:  infinite;
+}
+@keyframes change{
+    0%{
+        font-family: "plain light";
+        -webkit-text-stroke: 1px #fff;
+        color: #fff;
+        font-weight: 500;
+        opacity: 1;
+    }
+    48%{
+        font-family: "plain light";
+        -webkit-text-stroke: 1px #fff;
+        color: #fff;
+        font-weight: 500;
+        opacity: 0;
+    }
+    50%{
+        font-family: "Silk Serif";
+        -webkit-text-stroke: 1px #fff;
+        color: transparent;
+        font-weight: 500;
+        opacity: 1;
+    }
+    100%{
+        font-family: "Silk Serif";
+        -webkit-text-stroke: 1px #fff;
+        color: transparent;
+        font-weight: 500;
+        opacity: 0;
+    }
+}
+#waitMsg{
+    padding-left: 25vw;
+    margin-top: 45px;
+    font-size: 2vw;
+    display: flex;
+    flex-direction: column;
+    color: #f5f1f1;
+}
+
+/* <----- Wrapper Page ------> */
+#main{
+    position: relative;
+    background-color: #030303;
+}
+
+/* <----- Home Page ------> */
+#page1{
+    width: 100%;
+    height: 100vh;
+    background-color: #151515;
+}
+.header{
+    padding: 5vh 3vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header .navBar{
+    display: flex;
+    align-items: center;
+    gap: 3.5vw;
+}
