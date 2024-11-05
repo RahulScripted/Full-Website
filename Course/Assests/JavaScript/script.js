@@ -12,3 +12,26 @@ menu.onclick = () => {
         menuIconImage.classList.replace('ri-close-line', 'ri-menu-line'); 
     }
 }
+
+// Add event listener to each menu link to close the menu on click
+let menuLinks = document.querySelectorAll(".navBar a")
+menuLinks.forEach(link => {
+    link.onclick = () => {
+        navBar.classList.remove('active');
+        menuIconImage.classList.replace('ri-close-line', 'ri-menu-line');
+    };
+});
+
+
+// Update Button text
+const buttonText = document.getElementById("view");
+function updateButtonText(){
+    if(window.innerWidth < 500){
+        buttonText.textContent = 'View All';
+    }
+    else{
+        buttonText.textContent = 'View All Courses';
+    }
+}
+updateButtonText();
+window.addEventListener('resize',updateButtonText);

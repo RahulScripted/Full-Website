@@ -8,6 +8,7 @@
     text-decoration: none;
     list-style: none;
     font-family: "Roboto", serif;
+    scroll-behavior: smooth;
 }
 body{
     width: 100%;
@@ -29,16 +30,18 @@ body{
     --h2-font : 3rem;
     --p-font : 1.25rem;
     --i-font : 1.4rem;
-    --a-font : 1.15rem;
+    --a-font : 1.25rem;
     --h4-font : 1.5rem;
     --h5-font : 1.3rem;
     --menu-font: 2rem;
+    --span-font : 1rem;
     
     --h1-color : #121516;
     --p-color : #323234;
-    --span-color : #A9AAAB;
+    --span-color : #4c4e50;
     --star-color : #FFBF1D;
-    --hover-color : #0084FE;
+    --hover-color : #1373ce;
+    --btn-color : #0084FE;
     --background-color : #fff;
     --background-fade-color : #f0eded;
 }
@@ -54,15 +57,25 @@ body{
 }
 .btn{
     padding: 10px 20px;
-    background-color: var(--hover-color);
+    background-color: var(--btn-color);
     color: var(--background-color);
     border-radius: 10px;
     outline: none;
     border: none;
     font-size: var(--p-font);
     box-shadow: 0 3px 7px rgba(0,0,0,0.45);
+    transition: all 0.3s ease-in;
+}
+.btn:hover{
+    background-color: var(--hover-color);
+}
+.spanText{
+    font-size: var(--span-font);
+    color: var(--span-color);
+    font-weight: 500;
 }
 
+/* <--- Header ----> */
 .header{
     width: 96%;
     background-color: var(--background-color);
@@ -90,7 +103,8 @@ body{
     background-color: transparent;
 }
 .logo .logoName span{
-    font-weight: 300;
+    font-weight: 500;
+    color: var(--span-color);
 }
 .logo img{
     width: 40px;
@@ -132,8 +146,12 @@ body{
 }
 .join button.signUp{
     border-radius: 10px;
-    background-color: var(--hover-color);
+    background-color: var(--btn-color);
     color: var(--background-fade-color);
+    transition: all 0.2s ease-in;
+} 
+.join button.signUp:hover{
+    background-color: var(--hover-color);
 }
 .menu-icon{
     cursor: pointer;
@@ -298,7 +316,10 @@ body{
     justify-content: center;
     border-radius: 50%;
     font-size: 2rem;
-    color: var(--hover-color);
+    color: var(--btn-color);
+}
+.whyChoose .downPart .box:nth-child(1) i{
+    width: 95px;
 }
 .whyChoose .downPart .box .textPart{
     display: flex;
@@ -310,6 +331,105 @@ body{
 }
 .whyChoose .downPart .box .textPart .paragraph{
     font-size: 1rem;
+}
+
+/* <---- Course Section -----> */
+.Course{
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* <--- Course Top Part ---> */
+.Course .topPart{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--background-color);
+    padding: 25px 40px;
+    gap: 1rem;
+}
+.Course .topPart h2{
+    font-size: var(--h2-font);
+    font-weight: 500;
+}
+.Course .topPart .btn{
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+/* <--- Course Down Part ---> */
+.Course .downPart{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    gap: 1rem;
+}
+.Course .downPart .container{
+    padding: 20px;
+    background-color: var(--background-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    border-radius: 10px;
+}
+.Course .downPart .container .imgSection{
+    width: 300px;
+    height: 250px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.Course .downPart .container .imgSection img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.Course .downPart .container .textPart{
+    display: flex;
+    flex-direction: column;
+}
+.Course .downPart .container .textPart .spanText{
+    margin-bottom: 1rem;
+}
+.Course .downPart .container .textPart h4{
+    font-size: var(--h4-font);
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+.Course .downPart .container .textPart .teacherInformation{
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.Course .downPart .container .textPart .teacherInformation .teacher{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.Course .downPart .container .textPart .teacherInformation .teacher img{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+}
+.Course .downPart .container .textPart .teacherInformation .teacher .paragraph{
+    font-size: var(--span-font);
+}
+.Course .downPart .container .textPart .teacherInformation h4{
+    color: var(--btn-color);
+    text-align: center;
+    font-size: var(--h5-font);
+    font-weight: 600;
+    margin: 0;
 }
 
 @media (max-width:1200px){
@@ -369,12 +489,29 @@ body{
     .whyChoose .downPart .box .textPart .paragraph{
         font-size: 0.9rem;
     }
+    .Course .downPart{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .Course .downPart .container{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .Course .downPart .container .imgSection{
+        width: 450px;
+    }
 }
 
 @media (max-width:768px){
     :root{
         --h1-font : 2rem;
         --h2-font : 1.75rem;
+        --h4-font : 1.25rem;
     }
     .navBar{
         content: "";
@@ -423,10 +560,23 @@ body{
     .whyChoose .downPart .box .textPart .paragraph{
         font-size: 1rem;
     }
+    .Course .topPart{
+        padding: 25px 10px;
+    }
 }
 
 @media (max-width:500px){
     .whyChoose .downPart{
         grid-template-columns: repeat(1,1fr);
+    }
+    .Course .downPart .container{
+        padding: 20px;
+        flex-direction: column;
+    }
+    .Course .downPart .container .imgSection{
+        padding: 10px;
+    }
+    .Course .downPart .container .imgSection img{
+        border-radius: 10px;
     }
 }
