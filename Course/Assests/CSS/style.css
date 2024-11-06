@@ -432,6 +432,73 @@ body{
     margin: 0;
 }
 
+/* <--- Works ---> */
+.Works{
+    margin-top: 3rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+/* <--- Works Left Part ---> */
+.Works .leftPart{
+    width: 83.5%;
+}
+.Works .leftPart img{
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* <--- Works Right Part ---> */
+.Works .rightPart{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.Works .rightPart h2{
+    font-size: var(--h2-font);
+    background-color: var(--background-color);
+    padding: 20px 40px;
+    font-weight: 500;
+    border-radius: 10px;
+}
+.Works .rightPart .boxes{
+    margin-top: 1rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    gap: 1.5rem;
+}
+.Works .rightPart .boxes .box{
+    height: 200px;
+    border-radius: 10px;
+    background-color: var(--background-color);
+    padding: 20px 30px;
+}
+.Works .rightPart .boxes .box .number{
+    width: 60px;
+    height: 60px;
+    background-color: #EAF5FF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: var(--p-font);
+    color: var(--btn-color);
+    margin-bottom: 1rem;
+}
+.Works .rightPart .boxes .box h5{
+    font-size: var(--h5-font);
+    margin-bottom: 0.5rem;
+}
+.Works .rightPart .boxes .box .paragraph{
+    font-size: 1rem;
+}
+
 @media (max-width:1200px){
     :root{
         --h1-font : 3rem;
@@ -505,6 +572,16 @@ body{
     .Course .downPart .container .imgSection{
         width: 450px;
     }
+    .Works{
+        margin-top: 3rem;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .Works .leftPart{
+        width: 100%;
+    }
 }
 
 @media (max-width:768px){
@@ -562,6 +639,9 @@ body{
     }
     .Course .topPart{
         padding: 25px 10px;
+    }
+    .Works .rightPart .boxes{
+        grid-template-columns: repeat(1,1fr);
     }
 }
 
