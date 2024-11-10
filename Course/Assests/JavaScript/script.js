@@ -35,3 +35,9 @@ function updateButtonText(){
 }
 updateButtonText();
 window.addEventListener('resize',updateButtonText);
+
+
+// Swiper JS
+var swiper = new Swiper(".mySwiper", {
+    spaceBetween: 20,  
+});

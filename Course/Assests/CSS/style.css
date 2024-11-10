@@ -634,6 +634,70 @@ body{
     height: 41.5vw;
 }
 
+/* <--- Testimonial ---> */
+.swiper {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+.swiper-wrapper {
+    width: 100%;
+}
+.swiper-slide {
+    padding: 20px 40px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--background-color);
+    border-radius: 10px;
+    cursor: pointer;
+}
+.swiper-slide .imgPart{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+.swiper-slide .imgPart img{
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+    padding: 5px;
+    border: 2px solid var(--btn-color);
+}
+.swiper-slide .textPart{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.swiper-slide .textPart .stars{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: var(--h4-font);
+    color: #FFBE1B;
+    margin-bottom: 1.5rem;
+}
+.swiper-slide .textPart .paragraph{
+    width: 58%;
+    text-align: center;
+    font-size: var(--h5-font);
+    margin-bottom: 1rem;
+}
+.swiper-slide .textPart h5{
+    font-size: var(--h4-font);
+    margin-bottom: 0.75rem;
+}
+
 @media (max-width:1200px){
     :root{
         --h1-font : 3rem;
