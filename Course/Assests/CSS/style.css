@@ -698,6 +698,160 @@ body{
     margin-bottom: 0.75rem;
 }
 
+/* <--- Join ---> */
+.Join{
+    width: 100%;
+    background-color: var(--btn-color);
+    padding: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.Join h2{
+    font-size: var(--h2-font);
+    color: var(--background-color);
+    font-weight: 500;
+    margin-bottom: 1.25rem;
+    text-align: center;
+}
+.Join p{
+    color: var(--background-color);
+    width: 50%;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+.Join .btn{
+    background-color: var(--background-color);
+    color: var(--h1-color);
+    box-shadow: none;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/* <--- Contact ----> */
+.Contact{
+    width: 100%;
+    background-color: var(--background-color);
+    padding: 40px 20px 30px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+/* <--- COntact Row ---> */
+.Contact .row{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    justify-items: center;
+    gap: 1rem;
+}
+.Contact .row .col{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 10px;
+}
+.Contact .row .col:nth-child(1) .paragraph{
+    margin: 1rem 0;
+    font-size: 1rem;
+}
+.Contact .row .col .social{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+.Contact .row .col .social i{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #EAF5FF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--p-font);
+    color: var(--btn-color);
+}
+.Contact .row .col h3{
+    font-size: var(--h4-font);
+    margin-bottom: 1.25rem;
+}
+.Contact .row .col li{
+    margin-bottom: 1rem;
+    font-size: var(--p-font);
+    color: var(--p-color);
+    transition: all 0.25s ease-in;
+}
+.Contact .row .col li:hover{
+    transform: translateX(10px);
+    color: var(--hover-color);
+}
+.Contact .row .col li a{
+    font-size: var(--p-font);
+    color: var(--p-color);
+    transition: all 0.25s ease-in;
+}
+.Contact .row .col li a:hover{
+    color: var(--hover-color);
+}
+.Contact .row .col:last-child .paragraph{
+    font-size: 1.15rem;
+}
+.Contact .row .col .inputBox{
+    width: 100%;
+    margin-top: 1rem;
+    position: relative;
+}
+.Contact .row .col .inputBox input{
+    padding: 1rem 1.5rem;
+    font-size: var(--p-font);
+    color: var(--p-color);
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid #999;
+}
+.Contact .row .col .inputBox i{
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: var(--i-font);
+    width: 45px;
+    height: 45px;
+    background-color: var(--btn-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--background-color);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.25s ease-in;
+}
+.Contact .row .col .inputBox i:hover{
+    background-color: var(--hover-color);
+}
+
+/* <--- Contact Line ---> */
+.Contact .line{
+    margin: 1rem auto;
+    width: 100%;
+    height: 1.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--p-color);
+}
+/* <--- Contact Copyright Part ---> */
+.Contact .copyright{
+    font-size: var(--p-font);
+    color: var(--p-color);
+    text-align: center;
+}
+
 @media (max-width:1200px){
     :root{
         --h1-font : 3rem;
@@ -799,6 +953,9 @@ body{
         width: 100%;
         height: auto;
     }
+    .Contact .row{
+        grid-template-columns: repeat(3,1fr);
+    }
 }
 
 @media (max-width:768px){
@@ -873,6 +1030,22 @@ body{
         font-size: var(--h2-font);
         font-weight: 600;
     }
+    .Join p{
+        width: 100%;
+    }
+    .Contact{
+        padding: 40px 10px;
+    }
+    .Contact .row{
+        grid-template-columns: repeat(2,1fr);
+        gap: 0.5rem;
+    }
+    .Contact .row .col .inputBox input{
+        padding: 0.75rem 1rem;
+    }
+    .Contact .row .col .inputBox i{
+        right: 0;
+    }
 }
 
 @media (max-width:500px){
@@ -891,5 +1064,12 @@ body{
     }
     .Category .downPart{
         grid-template-columns: repeat(1,1fr);
+    }
+    .Contact .row .col .social i{
+        font-size: 1.25rem;
+    }
+    .Contact .row{
+        grid-template-columns: repeat(1,1fr);
+        justify-items: flex-start;
     }
 }
